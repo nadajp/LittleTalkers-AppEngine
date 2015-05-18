@@ -1,0 +1,124 @@
+/** Add css rules here for your application. */
+/** Set ids using widget.getElement().setId("idOfElement") */
+
+
+h1, h2, h3 {
+	color:#666666;
+}
+.top_menu {
+   background-color: #da645f;
+   color: white;
+   padding-left:20px;
+   padding-right:20px;
+}
+
+.gwt-Hyperlink, .gwt-Hyperlink a{
+   color: white;
+}
+
+.gwt-Hyperlink:hover, .gwt-Hyperlink a:hover {
+	color:gray;
+}
+
+.myMenuLink {
+   line-height: 60px;
+   margin-right: 10px;
+}
+
+.myMenuLink a, .myMenuLink a:visited {
+   color: white;
+}
+
+.myMenuLink:hover, .myMenuLink a:hover {
+   color: grey;
+   text-decoration: none;
+}
+
+.logo {
+   margin-left: 10px;
+}
+
+.title {
+   font-size: large;
+   font-weight: bold;
+   color: white;
+   line-height:60px;
+   padding-left:3px;
+}
+
+.title a {
+   color: white;
+   text-decoration: none;
+}
+
+.title a:visited, .title:visited {
+   color:white;
+}
+
+.title:hover, .title a:hover {
+   color: grey;
+   text-decoration: none;
+}
+#root {
+	margin: 0px;
+	padding: 0px;
+	background-color: #5eb5d9;
+	color:white;
+}
+
+.wrapper {
+   margin: 0px;
+   padding: 0px;
+
+}
+.features {
+   padding:10px;
+}
+.featureTitle {
+  padding:15px;
+}
+.featuresList {
+padding:10px;
+}
+.featuresTitle {
+  text-align:center;
+}
+
+.banner {
+   background-color:#bbd95e;
+   color:white;
+   padding:0 50px 0 50px;
+   width:100%;
+}
+
+.welcome-image {
+   float:left;
+}
+.google_play {
+	padding-top:10px;
+}
+.heading {
+   font-size: large;
+   color: grey;
+   margin-bottom:5px;
+}
+
+.help {
+	padding:30px;
+}
+
+.footer {
+	color: #5eb5d9;
+	background-color: lightgray;
+	padding:10px;
+}
+#copyright {
+	background-color:white;
+	color:grey;
+	padding:30px;
+	font-size:x-small;
+	text-align:center;
+}
+.privacy {
+	padding:20px;
+}

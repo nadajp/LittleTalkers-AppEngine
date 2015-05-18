@@ -1,0 +1,492 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://littletalkersapp.appspot.com/_ah/api",
+  "name" : "littletalkersapi",
+  "version" : "v1",
+  "description" : "LittleTalkers API",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://littletalkersapp.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "nadajp.com",
+  "ownerName" : "nadajp.com",
+  "packagePath" : "littletalkers.server",
+  "methods" : {
+    "littletalkersapi.getProfile" : {
+      "path" : "userprofile",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com" ],
+      "clientIds" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com", "229213308949-6p4dv7jvah4fdpgq1pn5v3v6ptm6fbui.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nadajp.littletalkers.server.LittleTalkersApi.getProfile",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "littletalkersapi.getKid" : {
+      "path" : "kid/{userId}/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com" ],
+      "clientIds" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com", "229213308949-6p4dv7jvah4fdpgq1pn5v3v6ptm6fbui.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nadajp.littletalkers.server.LittleTalkersApi.getKid",
+      "request" : {
+        "parameters" : {
+          "userId" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "littletalkersapi.updateProfile" : {
+      "path" : "userprofile",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com" ],
+      "clientIds" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com", "229213308949-6p4dv7jvah4fdpgq1pn5v3v6ptm6fbui.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nadajp.littletalkers.server.LittleTalkersApi.updateProfile",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "littletalkersapi.insertProfile" : {
+      "path" : "userprofile",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com" ],
+      "clientIds" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com", "229213308949-6p4dv7jvah4fdpgq1pn5v3v6ptm6fbui.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nadajp.littletalkers.server.LittleTalkersApi.insertProfile",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "littletalkersapi.insertUserData" : {
+      "path" : "userdatawrapper/{userId}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com" ],
+      "clientIds" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com", "229213308949-6p4dv7jvah4fdpgq1pn5v3v6ptm6fbui.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nadajp.littletalkers.server.LittleTalkersApi.insertUserData",
+      "request" : {
+        "parameters" : {
+          "userId" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "littletalkersapi.getWordDetails" : {
+      "path" : "word/{userId}/{kidId}/{word}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com" ],
+      "clientIds" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com", "229213308949-6p4dv7jvah4fdpgq1pn5v3v6ptm6fbui.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nadajp.littletalkers.server.LittleTalkersApi.getWordDetails",
+      "request" : {
+        "parameters" : {
+          "userId" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "kidId" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "word" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "littletalkersapi.updateKid" : {
+      "path" : "kid",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com" ],
+      "clientIds" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com", "229213308949-6p4dv7jvah4fdpgq1pn5v3v6ptm6fbui.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nadajp.littletalkers.server.LittleTalkersApi.updateKid",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "littletalkersapi.getWordsForKid" : {
+      "path" : "wordcollection/{userId}/{kidId}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com" ],
+      "clientIds" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com", "229213308949-6p4dv7jvah4fdpgq1pn5v3v6ptm6fbui.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nadajp.littletalkers.server.LittleTalkersApi.getWordsForKid",
+      "request" : {
+        "parameters" : {
+          "userId" : {
+            "type" : "int64",
+            "required" : true
+          },
+          "kidId" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "littletalkersapi.removeKid" : {
+      "path" : "kid/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com" ],
+      "clientIds" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com", "229213308949-6p4dv7jvah4fdpgq1pn5v3v6ptm6fbui.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nadajp.littletalkers.server.LittleTalkersApi.removeKid",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "littletalkersapi.insertKid" : {
+      "path" : "kid",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com" ],
+      "clientIds" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com", "229213308949-6p4dv7jvah4fdpgq1pn5v3v6ptm6fbui.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nadajp.littletalkers.server.LittleTalkersApi.insertKid",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "littletalkersapi.insertWord" : {
+      "path" : "word/{userId}",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com" ],
+      "clientIds" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com", "229213308949-6p4dv7jvah4fdpgq1pn5v3v6ptm6fbui.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nadajp.littletalkers.server.LittleTalkersApi.insertWord",
+      "request" : {
+        "parameters" : {
+          "userId" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "littletalkersapi.getProfileById" : {
+      "path" : "userprofile/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com" ],
+      "clientIds" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com", "229213308949-6p4dv7jvah4fdpgq1pn5v3v6ptm6fbui.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nadajp.littletalkers.server.LittleTalkersApi.getProfileById",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "littletalkersapi.removeProfile" : {
+      "path" : "profile/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com" ],
+      "clientIds" : [ "229213308949-rmtu100uq3vqsk2didn5pv39jfb4mqps.apps.googleusercontent.com", "292824132082.apps.googleusercontent.com", "229213308949-6p4dv7jvah4fdpgq1pn5v3v6ptm6fbui.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.nadajp.littletalkers.server.LittleTalkersApi.removeProfile",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "UserProfile" : {
+        "id" : "UserProfile",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "email" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Kid" : {
+        "id" : "Kid",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "birthdate" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "location" : {
+            "type" : "string"
+          },
+          "language" : {
+            "type" : "string"
+          },
+          "pictureUri" : {
+            "type" : "string"
+          },
+          "parentId" : {
+            "type" : "string",
+            "format" : "int64"
+          }
+        }
+      },
+      "UserDataWrapper" : {
+        "id" : "UserDataWrapper",
+        "type" : "object",
+        "properties" : {
+          "words" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Word"
+            }
+          },
+          "kids" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Kid"
+            }
+          }
+        }
+      },
+      "Word" : {
+        "id" : "Word",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "kidId" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "word" : {
+            "type" : "string"
+          },
+          "language" : {
+            "type" : "string"
+          },
+          "date" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "location" : {
+            "type" : "string"
+          },
+          "translation" : {
+            "type" : "string"
+          },
+          "notes" : {
+            "type" : "string"
+          },
+          "audioFileUri" : {
+            "type" : "string"
+          },
+          "parentId" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "toWhom" : {
+            "type" : "string"
+          }
+        }
+      },
+      "WordCollection" : {
+        "id" : "WordCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Word"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.nadajp.littletalkers.server.LittleTalkersApi.getProfile" : {
+        "response" : {
+          "$ref" : "UserProfile"
+        }
+      },
+      "com.nadajp.littletalkers.server.LittleTalkersApi.getKid" : {
+        "response" : {
+          "$ref" : "Kid"
+        }
+      },
+      "com.nadajp.littletalkers.server.LittleTalkersApi.updateProfile" : {
+        "request" : {
+          "$ref" : "UserProfile"
+        },
+        "response" : {
+          "$ref" : "UserProfile"
+        }
+      },
+      "com.nadajp.littletalkers.server.LittleTalkersApi.insertProfile" : {
+        "response" : {
+          "$ref" : "UserProfile"
+        }
+      },
+      "com.nadajp.littletalkers.server.LittleTalkersApi.insertUserData" : {
+        "request" : {
+          "$ref" : "UserDataWrapper"
+        },
+        "response" : {
+          "$ref" : "UserDataWrapper"
+        }
+      },
+      "com.nadajp.littletalkers.server.LittleTalkersApi.getWordDetails" : {
+        "response" : {
+          "$ref" : "Word"
+        }
+      },
+      "com.nadajp.littletalkers.server.LittleTalkersApi.updateKid" : {
+        "request" : {
+          "$ref" : "Kid"
+        },
+        "response" : {
+          "$ref" : "Kid"
+        }
+      },
+      "com.nadajp.littletalkers.server.LittleTalkersApi.getWordsForKid" : {
+        "response" : {
+          "$ref" : "WordCollection"
+        }
+      },
+      "com.nadajp.littletalkers.server.LittleTalkersApi.removeKid" : {
+      },
+      "com.nadajp.littletalkers.server.LittleTalkersApi.insertKid" : {
+        "request" : {
+          "$ref" : "Kid"
+        },
+        "response" : {
+          "$ref" : "Kid"
+        }
+      },
+      "com.nadajp.littletalkers.server.LittleTalkersApi.insertWord" : {
+        "request" : {
+          "$ref" : "Word"
+        },
+        "response" : {
+          "$ref" : "Word"
+        }
+      },
+      "com.nadajp.littletalkers.server.LittleTalkersApi.getProfileById" : {
+        "response" : {
+          "$ref" : "UserProfile"
+        }
+      },
+      "com.nadajp.littletalkers.server.LittleTalkersApi.removeProfile" : {
+      }
+    }
+  }
+}

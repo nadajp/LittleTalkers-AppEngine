@@ -1,0 +1,467 @@
+{
+ "kind": "discovery#restDescription",
+ "etag": "\"u_zXkMELIlX4ktyNbM2XKD4vK8E/80bmnJ-QXHAKWgc154w5QHXWK9M\"",
+ "discoveryVersion": "v1",
+ "id": "littletalkersapi:v1",
+ "name": "littletalkersapi",
+ "version": "v1",
+ "description": "LittleTalkers API",
+ "ownerDomain": "nadajp.com",
+ "ownerName": "nadajp.com",
+ "packagePath": "littletalkers.server",
+ "icons": {
+  "x16": "http://www.google.com/images/icons/product/search-16.gif",
+  "x32": "http://www.google.com/images/icons/product/search-32.gif"
+ },
+ "protocol": "rest",
+ "baseUrl": "https://littletalkersapp.appspot.com/_ah/api/littletalkersapi/v1/",
+ "basePath": "/_ah/api/littletalkersapi/v1/",
+ "rootUrl": "https://littletalkersapp.appspot.com/_ah/api/",
+ "servicePath": "littletalkersapi/v1/",
+ "batchPath": "batch",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "Kid": {
+   "id": "Kid",
+   "type": "object",
+   "properties": {
+    "birthdate": {
+     "type": "string",
+     "format": "int64"
+    },
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "language": {
+     "type": "string"
+    },
+    "location": {
+     "type": "string"
+    },
+    "name": {
+     "type": "string"
+    },
+    "parentId": {
+     "type": "string",
+     "format": "int64"
+    },
+    "pictureUri": {
+     "type": "string"
+    }
+   }
+  },
+  "UserDataWrapper": {
+   "id": "UserDataWrapper",
+   "type": "object",
+   "properties": {
+    "kids": {
+     "type": "array",
+     "items": {
+      "$ref": "Kid"
+     }
+    },
+    "words": {
+     "type": "array",
+     "items": {
+      "$ref": "Word"
+     }
+    }
+   }
+  },
+  "UserProfile": {
+   "id": "UserProfile",
+   "type": "object",
+   "properties": {
+    "email": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  },
+  "Word": {
+   "id": "Word",
+   "type": "object",
+   "properties": {
+    "audioFileUri": {
+     "type": "string"
+    },
+    "date": {
+     "type": "string",
+     "format": "int64"
+    },
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "kidId": {
+     "type": "string",
+     "format": "int64"
+    },
+    "language": {
+     "type": "string"
+    },
+    "location": {
+     "type": "string"
+    },
+    "notes": {
+     "type": "string"
+    },
+    "parentId": {
+     "type": "string",
+     "format": "int64"
+    },
+    "toWhom": {
+     "type": "string"
+    },
+    "translation": {
+     "type": "string"
+    },
+    "word": {
+     "type": "string"
+    }
+   }
+  },
+  "WordCollection": {
+   "id": "WordCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "Word"
+     }
+    }
+   }
+  }
+ },
+ "methods": {
+  "getKid": {
+   "id": "littletalkersapi.getKid",
+   "path": "kid/{userId}/{id}",
+   "httpMethod": "GET",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    },
+    "userId": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "userId",
+    "id"
+   ],
+   "response": {
+    "$ref": "Kid"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "getProfile": {
+   "id": "littletalkersapi.getProfile",
+   "path": "userprofile",
+   "httpMethod": "GET",
+   "response": {
+    "$ref": "UserProfile"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "getProfileById": {
+   "id": "littletalkersapi.getProfileById",
+   "path": "userprofile/{id}",
+   "httpMethod": "GET",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "response": {
+    "$ref": "UserProfile"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "getWordDetails": {
+   "id": "littletalkersapi.getWordDetails",
+   "path": "word/{userId}/{kidId}/{word}",
+   "httpMethod": "GET",
+   "parameters": {
+    "kidId": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    },
+    "userId": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    },
+    "word": {
+     "type": "string",
+     "required": true,
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "userId",
+    "kidId",
+    "word"
+   ],
+   "response": {
+    "$ref": "Word"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "getWordsForKid": {
+   "id": "littletalkersapi.getWordsForKid",
+   "path": "wordcollection/{userId}/{kidId}",
+   "httpMethod": "GET",
+   "parameters": {
+    "kidId": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    },
+    "userId": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "userId",
+    "kidId"
+   ],
+   "response": {
+    "$ref": "WordCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "insertKid": {
+   "id": "littletalkersapi.insertKid",
+   "path": "kid",
+   "httpMethod": "POST",
+   "request": {
+    "$ref": "Kid",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "Kid"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "insertProfile": {
+   "id": "littletalkersapi.insertProfile",
+   "path": "userprofile",
+   "httpMethod": "POST",
+   "response": {
+    "$ref": "UserProfile"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "insertUserData": {
+   "id": "littletalkersapi.insertUserData",
+   "path": "userdatawrapper/{userId}",
+   "httpMethod": "POST",
+   "parameters": {
+    "userId": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "userId"
+   ],
+   "request": {
+    "$ref": "UserDataWrapper",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "UserDataWrapper"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "insertWord": {
+   "id": "littletalkersapi.insertWord",
+   "path": "word/{userId}",
+   "httpMethod": "POST",
+   "parameters": {
+    "userId": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "userId"
+   ],
+   "request": {
+    "$ref": "Word",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "Word"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "removeKid": {
+   "id": "littletalkersapi.removeKid",
+   "path": "kid/{id}",
+   "httpMethod": "DELETE",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "removeProfile": {
+   "id": "littletalkersapi.removeProfile",
+   "path": "profile/{id}",
+   "httpMethod": "DELETE",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "updateKid": {
+   "id": "littletalkersapi.updateKid",
+   "path": "kid",
+   "httpMethod": "PUT",
+   "request": {
+    "$ref": "Kid",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "Kid"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "updateProfile": {
+   "id": "littletalkersapi.updateProfile",
+   "path": "userprofile",
+   "httpMethod": "PUT",
+   "request": {
+    "$ref": "UserProfile",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "UserProfile"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}
